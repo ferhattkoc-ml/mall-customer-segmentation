@@ -1,39 +1,83 @@
 # Mall Customer Segmentation
 
-This project focuses on customer segmentation using **K-Means** and **Hierarchical Clustering** algorithms on the *Mall Customer Segmentation* dataset from Kaggle.
+This project performs **customer segmentation analysis** using **K-Means** and **Hierarchical Clustering** on the Kaggle *Mall Customers* dataset.
 
-## 📌 Objective
-The main goal is to segment customers based on their **annual income** and **spending behavior** in order to better understand customer groups and support business decision-making.
+The goal is to identify meaningful customer groups based on **Annual Income** and **Spending Score**, and interpret these groups from a business perspective.
+
+---
+
+## 📂 Project Structure
+├── Mall_Customers.csv
+├── mall_customers.ipynb
+├── k_means.png
+├── dendogram.png
+├── hierarchical_clustering.png
+└── README.md
+
+---
 
 ## 📊 Dataset
-- Source: Kaggle – Mall Customer Segmentation Data
-- Features used:
+- **Source:** Kaggle – Mall Customer Segmentation Data  
+- **Features used for clustering:**
   - Annual Income (k$)
   - Spending Score (1–100)
-- Additional feature:
-  - Gender (used only for post-cluster analysis)
+- **Additional feature:**
+  - Gender (used only for post-clustering analysis)
+
+---
 
 ## ⚙️ Methodology
-1. Data preprocessing and feature selection
-2. Standardization using `StandardScaler`
-3. Determination of optimal number of clusters using:
-   - Dendrogram (Hierarchical Clustering)
+
+1. Data loading and preprocessing  
+2. Feature standardization using `StandardScaler`  
+3. Determination of optimal number of clusters using **Dendrogram**  
 4. Customer segmentation using:
-   - K-Means (k = 3)
-   - Hierarchical Clustering (Ward linkage)
-5. Cluster profiling and interpretation
-6. Gender distribution analysis across clusters
+   - **K-Means (k = 3)**
+   - **Hierarchical Clustering (Ward linkage)**
+5. Cluster profiling using statistical summaries  
+6. Gender distribution analysis across clusters  
+
+---
+
+## 🌲 Dendrogram Analysis
+
+The dendrogram was used to determine the optimal number of clusters.  
+A clear separation into **three main clusters** was observed.
+
+![Dendrogram](dendogram.png)
+
+---
+
+## 🔵 K-Means Clustering (k = 3)
+
+Customers were segmented into three distinct groups using K-Means clustering.
+
+![K-Means Clustering](k_means.png)
+
+---
+
+## 🟣 Hierarchical Clustering (3 Clusters)
+
+Hierarchical clustering produced results consistent with K-Means, confirming the robustness of the segmentation.
+
+![Hierarchical Clustering](hierarchical_clustering.png)
+
+---
 
 ## 🧩 Customer Segments
-Based on the analysis, customers are grouped into three meaningful segments:
-- **Price-Sensitive Main Segment**
-- **Potential Premium Customers**
-- **Premium Customers**
 
-## 📈 Visualization
-- Scatter plots for cluster visualization
-- Dendrogram for hierarchical clustering
-- Cluster-wise statistical summaries
+Based on clustering results, the following business-oriented segments were identified:
+
+- **Price-Sensitive Main Segment**  
+  Customers with medium income and medium spending behavior.
+
+- **Potential Premium Customers**  
+  High-income customers with relatively low spending potential.
+
+- **Premium Customers**  
+  High-income and high-spending customers representing the most valuable segment.
+
+---
 
 ## 🛠️ Technologies Used
 - Python
@@ -43,9 +87,13 @@ Based on the analysis, customers are grouped into three meaningful segments:
 - scikit-learn
 - scipy
 
+---
+
 ## 📝 Conclusion
-Both K-Means and Hierarchical Clustering methods produced consistent and interpretable customer segments. The results can be used to develop targeted marketing strategies for different customer groups.
+
+Both **K-Means** and **Hierarchical Clustering** methods produced consistent and interpretable customer segments.  
+The identified segments can be effectively used for **targeted marketing strategies** and customer relationship management.
 
 ---
 
-*This project is intended for educational and portfolio purposes.*
+*This project is created for educational and portfolio purposes.*
